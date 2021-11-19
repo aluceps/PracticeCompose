@@ -4,15 +4,15 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.ui.platform.setContent
-import me.aluceps.practicecompose.model.Message
-import me.aluceps.practicecompose.ui.view.MessageCard
+import com.example.compose.tutorial.SampleData
+import me.aluceps.practicecompose.ui.view.Conversation
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MaterialTheme {
-                MessageCard(Message("Android", "Jetpack Compose"))
+                Conversation(SampleData.conversationSample)
             }
         }
     }

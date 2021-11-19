@@ -1,6 +1,5 @@
 package me.aluceps.practicecompose.ui.view
 
-import android.content.res.Configuration
 import androidx.compose.animation.animateAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.Image
@@ -9,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -33,7 +33,11 @@ import me.aluceps.practicecompose.model.Message
 
 @Composable
 fun MessageCard(msg: Message) {
-    Row(modifier = Modifier.padding(all = 8.dp)) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(all = 8.dp)
+    ) {
         Image(
             painter = painterResource(R.drawable.ic_launcher_foreground),
             modifier = Modifier
@@ -78,13 +82,25 @@ fun MessageCard(msg: Message) {
 }
 
 @Preview(
-    uiMode = Configuration.UI_MODE_NIGHT_YES,
-    showBackground = true,
-    name = "Dark Mode"
+//    uiMode = Configuration.UI_MODE_NIGHT_YES,
+//    showBackground = true,
+//    name = "Dark Mode"
 )
 @Composable
 fun PreviewMessageCard() {
     MaterialTheme {
         MessageCard(msg = Message("Colleague", "Hey, take a look at Jetpack Compose, it's gread!"))
+    }
+}
+
+@Preview(
+//    uiMode = Configuration.UI_MODE_NIGHT_YES,
+//    showBackground = true,
+//    name = "Dark Mode"
+)
+@Composable
+fun PreviewMessageCardShort() {
+    MaterialTheme {
+        MessageCard(msg = Message("Colleague", "Hey"))
     }
 }

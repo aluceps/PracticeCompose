@@ -1,3 +1,9 @@
 package me.aluceps.practicecompose.model
 
-data class Message(val author: String, val body: String)
+sealed class Message {
+    abstract val author: String
+    abstract val body: String
+
+    data class Me(override val author: String, override val body: String) : Message()
+    data class You(override val author: String, override val body: String) : Message()
+}

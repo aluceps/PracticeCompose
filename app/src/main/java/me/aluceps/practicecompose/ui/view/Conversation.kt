@@ -4,7 +4,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.compose.tutorial.SampleData
+import me.aluceps.practicecompose.data.SampleData
 import me.aluceps.practicecompose.model.Message
 
 @Composable
